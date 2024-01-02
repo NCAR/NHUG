@@ -24,7 +24,7 @@ validation:
 # ----------- content ----------------
 # ------------------------------------
 nav:
-  - Home : nhug/index.md
+  - Home: nhug/index.md
 
   - NHUG Monthly Meetings:
       - nhug/upcoming-events.md
@@ -74,7 +74,7 @@ theme:
     # - navigation.instant
     # - navigation.prune
     # - navigation.sections
-    # - navigation.tabs
+    - navigation.tabs
     # - navigation.tabs.sticky
     # - navigation.top
     - navigation.tracking # -- When anchor tracking is enabled, the URL in the address bar is automatically updated with the active anchor as highlighted.
