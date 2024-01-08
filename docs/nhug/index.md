@@ -4,7 +4,7 @@
 
 The NCAR HPC Users’ Group, NHUG, is a dedicated community that aims to promote the productive use of high-performance computing (HPC) facilities at NCAR and increase collaboration among all of the NCAR HPC community.
 
-NHUG holds monthly meetings featuring different HPC-related topics. The goal of these meetings is to foster a community around HPC-related issues and increase the collaboration among all of the NCAR HPC user community.  We encourage you to join our monthly meetings.
+NHUG holds monthly meetings featuring different HPC-related topics. The goal of these meetings is to foster a community around HPC-related issues and increase the collaboration among all of the NCAR HPC user community. To learn more about NHUG monthly meetings, please visit the [NHUG Meetings](#./nhug-meetings) page.
 
 !!! note "NHUG Communication Channels"
     Join NHUG email list to receive calendar invites for upcoming monthly meetings and other important announcements. We also encourage you to join NCAR HPC User Group NCAR HPC User Group Slack channel channel which we will use for focussed interactions during and outside the monthly meetings.  
