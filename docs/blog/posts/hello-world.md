@@ -2,8 +2,8 @@
 draft: true 
 date: 2024-01-08
 categories:
-  - Conda
-  - Python
+  - Example
+  - Post
 ---
 
 # Example Post
