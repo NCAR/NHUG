@@ -2,11 +2,11 @@
 draft: true 
 date: 2024-01-08
 categories:
-  - Hello
-  - World
+  - Conda
+  - Python
 ---
 
-# Hello world!
+# Example Post
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec
 maximus ex. Sed consequat, nulla quis malesuada dapibus, elit metus vehicula

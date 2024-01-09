@@ -26,18 +26,23 @@ validation:
 nav:
   - Home: 
     - nhug/index.md
+
+  - NHUG Meetings:
     - NHUG Upcoming Meetings:  nhug/upcoming-events.md
     - Archive of Past Meetings:
       - nhug/archive/index.md
       - nhug/archive/2023-12-05.md
       - nhug/archive/2023-11-07.md
       - nhug/archive/2023-10-04.md
+      - nhug/archive/2023-09-05.md
+      - nhug/archive/2023-07-11.md
+      - nhug/archive/2023-06-06.md
+      - nhug/archive/2023-05-02.md
 
   - NHUG Resources: nhug/resources.md
 
   - NHUG Featured Project:
       - nhug/featured.md
-      - nhug/featured/2023-12-05.md
 
   - Blog: 
       - blog/index.md
@@ -128,6 +133,9 @@ markdown_extensions:
   - admonition
   - md_in_html
   - def_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - codehilite:
       guess_lang: false
   - toc:
