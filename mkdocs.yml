@@ -26,6 +26,8 @@ validation:
 nav:
   - Home: 
     - nhug/index.md
+
+  - NHUG Meetings:
     - NHUG Upcoming Meetings:  nhug/upcoming-events.md
     - Archive of Past Meetings:
       - nhug/archive/index.md
@@ -41,7 +43,6 @@ nav:
 
   - NHUG Featured Project:
       - nhug/featured.md
-      - nhug/featured/2023-12-05.md
 
   - Blog: 
       - blog/index.md
