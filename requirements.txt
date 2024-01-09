@@ -1,20 +1,24 @@
 # Requirements for core
 jinja2>=3.0
 markdown>=3.2
-mkdocs>=1.4.2
-mkdocs-material-extensions>=1.1
+mkdocs>=1.5.3
+mkdocs-material-extensions>=1.3
 pygments>=2.14
-pymdown-extensions>=9.9.1
+pymdown-extensions>=10.2
 
 # Requirements for plugins
 colorama>=0.4
 regex>=2022.4.24
 requests>=2.26
 
-#mkdocs==1.2.*
-mkdocs-material==8.*
+mkdocs-material
 mkdocs-minify-plugin
 mkdocs-git-revision-date-plugin
 mkdocs-git-revision-date-localized-plugin
 mkdocs-glightbox
-mkdocs-open-in-new-tab
+
+# Requirements for plugins
+babel~=2.10
+paginate~=0.5
+regex>=2022.4
+requests~=2.26
