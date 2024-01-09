@@ -24,21 +24,23 @@ validation:
 # ----------- content ----------------
 # ------------------------------------
 nav:
-  - Home: nhug/index.md
-
-  - NHUG Monthly Meetings:
-      - nhug/upcoming-events.md
-      - Archive of Past Meetings:
-        - nhug/archive/index.md
-        - nhug/archive/2023-12-05.md
+  - Home: 
+    - nhug/index.md
+    - NHUG Upcoming Meetings:  nhug/upcoming-events.md
+    - Archive of Past Meetings:
+      - nhug/archive/index.md
+      - nhug/archive/2023-12-05.md
+      - nhug/archive/2023-11-07.md
+      - nhug/archive/2023-10-04.md
 
   - NHUG Resources: nhug/resources.md
 
-  - NHUG Featured Project: nhug/featured.md
+  - NHUG Featured Project:
+      - nhug/featured.md
+      - nhug/featured/2023-12-05.md
 
-  - NHUG Blog: 
-      - nhug/blog/index.md
-      - Contributing to the Documentation: contributing.md
+  - Blog: 
+      - blog/index.md
 
 # ------------------------------------
 # -- configurations
@@ -66,7 +68,7 @@ theme:
     #- content.tooltips        # Adding tooltip for hovering over links
 
     # - header.autohide
-    # - navigation.expand
+    - navigation.expand
     - navigation.footer
     - navigation.indexes
     - navigation.top          # back to top button
@@ -201,7 +203,10 @@ plugins:
       caption_position: bottom
   - minify:
       minify_html: true
-  - open-in-new-tab
+  - blog:
+      blog_dir: blog/
+      blog_toc: true
+
 
 extra:
   social:
