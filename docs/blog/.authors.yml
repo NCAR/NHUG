@@ -1,8 +1,17 @@
 authors:
+<<<<<<< HEAD
   negin513:
     name: Negin Sobhani
     description: HPC Consultant
     avatar: https://github.com/negin513.png
+=======
+  negins:
+    name: Negin Sobhani
+    description: NCAR CISL Consulting Services Group
+    avatar: https://avatars.githubusercontent.com/u/17344536?v=4
+    slug: negins
+    url: https://github.com/negin513/
+>>>>>>> 552ab77 (Negin in authors)
 
   benkirk:
     name: Ben Kirk
