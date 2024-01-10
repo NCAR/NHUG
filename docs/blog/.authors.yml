@@ -3,3 +3,10 @@ authors:
     name: Negin Sobhani
     description: HPC Consultant
     avatar: https://github.com/negin513.png
+
+  benkirk:
+    name: Ben Kirk
+    description: NCAR CISL Consulting Services Group
+    avatar: https://avatars.githubusercontent.com/u/2366572?v=4
+    slug: benkirk
+    url: https://github.com/benkirk/
