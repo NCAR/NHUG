@@ -21,36 +21,6 @@ validation:
     unrecognized_links: ignore  # unrecognized relative links (to be activated later!)
 
 # ------------------------------------
-# ----------- content ----------------
-# ------------------------------------
-nav:
-  - Home: 
-    - nhug/index.md
-
-  - Monthly Meetings:
-    - NHUG Upcoming Meetings:  nhug/upcoming-events.md
-    - Archive of Past Meetings:
-      - nhug/archive/index.md
-      - nhug/archive/2023-12-05.md
-      - nhug/archive/2023-11-07.md
-      - nhug/archive/2023-10-04.md
-      - nhug/archive/2023-09-05.md
-      - nhug/archive/2023-07-11.md
-      - nhug/archive/2023-06-06.md
-      - nhug/archive/2023-05-02.md
-      - nhug/archive/2023-04-04.md
-      - nhug/archive/2023-03-07.md
-      - nhug/archive/2023-02-07.md
-
-  - Resources: nhug/resources.md
-
-  - Featured Projects:
-      - nhug/featured.md
-
-  - Blog: 
-      - blog/index.md
-
-# ------------------------------------
 # -- configurations
 
 
