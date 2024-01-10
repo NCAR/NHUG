@@ -8,8 +8,10 @@ NHUG holds monthly meetings featuring different HPC-related topics. The goal of 
 
 !!! note "NHUG Communication Channels"
     Join NHUG email list to receive calendar invites for upcoming monthly meetings and other important announcements. We also encourage you to join NCAR HPC User Group NCAR HPC User Group Slack channel channel which we will use for focussed interactions during and outside the monthly meetings.  
-        [Join NHUG Email List](https://groups.google.com/a/ucar.edu/g/nhug){ .md-button .md-button--primary} [Join NHUG Slack Channel](http://ncarhpcusergroup.slack.com){ .md-button .md-button--primary }
-
+    <div class="grid cards" markdown>
+        <a href="https://groups.google.com/a/ucar.edu/g/nhug" class="md-button md-button--primary">:fontawesome-solid-envelope: &ensp; Join NHUG Email List </a>
+        <a href="http://ncarhpcusergroup.slack.com" class="md-button md-button--primary">:fontawesome-brands-slack: &ensp; Join NHUG Slack Channel</a>
+    </div>
 
 !!! tip "Contribute to Future NHUG Topics"
     If you have suggestions for future meeting topics or ideas that can enhance our community, we'd love to hear from you. Please submit your ideas using the form below to help shape our upcoming sessions.

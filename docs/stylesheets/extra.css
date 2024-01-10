@@ -80,7 +80,9 @@ body {
   --md-code-fg-color:                  rgb(11,33,57);
 }
 
-
+.md-button--primary {
+  text-align: center;
+}
 
 .md-footer-social {
   padding-top: 1rem;

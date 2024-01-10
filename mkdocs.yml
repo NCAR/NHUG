@@ -136,6 +136,9 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - theme/.icons
   - codehilite:
       guess_lang: false
   - toc:
@@ -146,8 +149,6 @@ markdown_extensions:
       smart_enable: all
   - pymdownx.caret
   - pymdownx.critic
-  - pymdownx.emoji:
-      emoji_generator: !!python/name:pymdownx.emoji.to_svg
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark
@@ -166,8 +167,6 @@ markdown_extensions:
       smart_enable: all
   - pymdownx.caret
   - pymdownx.details
-  - pymdownx.emoji:
-      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -212,6 +211,7 @@ plugins:
   - minify:
       minify_html: true
   - blog:
+      draft: true
       blog_toc: true
       post_url_format: "{slug}"
 
