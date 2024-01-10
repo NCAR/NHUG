@@ -16,12 +16,12 @@ Do you tire of responding to Duo pushes every single time you log in to NCAR's H
 <!-- more -->
 
 ---
-`ControlPath` and `ControlMaster` are `ssh` client options that work together to a socket file which allow an initial `ssh` connection to a host be reused and optionally persist after the initial session has disconnected. In practice this means the first connection to a host will be authenticated normally, but subsequent connections will simply reuse the initial connection without requiring additional authentication.
+`ControlPath` and `ControlMaster` are `ssh` client options that work together along with an automatically generated socket file, allowing an initial `ssh` connection to be reused and optionally persist after the initial session has disconnected. In practice this means the first connection to a host will be authenticated normally, but subsequent connections will simply reuse the initial connection without requiring additional authentication.
 
 
 
 ## Local configuration
-Nothing special is required on the HPC systems to enable this functionality, however you will need to perform some local configuration of your `ssh` client.  In the example below I'm using `OpenSSH` on my Macbook laptop, and all that is required is editing the `config` file in my `~/.ssh` directory:
+Nothing special is required on the HPC systems to enable this functionality, however you will need to perform some local configuration of your `ssh` client.  In the example below I'm using the default `OpenSSH` on my Macbook laptop, and all that is required is editing the `config` file in my `~/.ssh` directory:
 
 ```pre title="~/.ssh/config" linenums="1"  hl_lines="7-12"
 host casper
@@ -38,11 +38,11 @@ host *
     ServerAliveCountMax 5
 ```
 
-The first two sections are simply convenience: They define aliases for the host names `casper` and `derecho` to their fully-qualified domain names.  The idea then is I can `ssh casper` without needing to use the full host and domain name.
+The first two sections are simply convenience: they define aliases for the host names `casper` and `derecho` to their fully-qualified domain names.  The idea then is I can `ssh casper` without needing to use the full host and domain name.
 
 The final section (`host *`) contains the specific configuration of interest:
 
-- `ControlPath ~/.ssh/controlpath-%r@%h:%p` specifies the path to a control socket used for connection sharing.  This makes use of some special tokens:
+- `ControlPath ~/.ssh/controlpath-%r@%h:%p` specifies the path to a controling file "socket" used for connection sharing.  This makes use of some special tokens:
      - `%r` : username on the remote system,
      - `%h` : the remote system host name, and
      - `%p` : the remote port.
@@ -50,7 +50,10 @@ The final section (`host *`) contains the specific configuration of interest:
      This allows for a unique `ControlPath` file to be placed in our `~/.ssh/` directory for each unique user/host/port combination.
 
 - `ControlMaster auto` enables "opportunistic `ssh` multiplexing," meaning `ssh` will attempt to use an existing established connection if possible, and establish a new one if required.
-- `ControlPersist 12h` specifies that the controlling connection should remain open in the background (waiting for future client connections) after the initial client connection has been closed.  **Without this option, closing a controlling `ssh` session will abruptly terminate any other active, shared authentication connections.**
+- `ControlPersist 12h` specifies that the controlling connection should remain open in the background (waiting for future client connections) after the initial client connection has been closed.
+
+    **Without this option, closing a controlling `ssh` session will abruptly terminate any other active, shared authentication connections.**
+
 - The final two lines, `ServerAliveInterval 120s` and `ServerAliveCountMax 5`, are useful for maintaining `ssh` connections.
 
     When our client is idle, eventually we will be disconnected from the server.  These settings send very minimal traffic at intervals even when we are not actively using `ssh`, triggering the server to respond.  If the server does not respond after `ServerAliveCountMax` steps, our client will finally give up and disconnect.
@@ -64,7 +67,7 @@ Your `~/.ssh/config` file supports many, many more options.  See [here](https://
 To see how these pieces work together, consider the following examples:
 
 !!! example "Connecting to `casper` through a new `ControlPath` & examining the mechanics of the process"
-    ```console linenums="1"
+    ```console linenums="1" hl_lines="5"
     ssh-client(1)$ ls ~/.ssh/control*
     ls: /Users/benkirk/.ssh/control*: No such file or directory
 
@@ -86,7 +89,7 @@ To see how these pieces work together, consider the following examples:
 
     **Detailed Discussion**
 
-      1. For demonstration purposes, we begin on a quiet client with no existing `ControlPath` instances (line 1).
+      1. For demonstration purposes, we begin on a quiet client with no existing `ControlPath` instances, as shown in line 1.
       2. On line 4 we start a new `ssh` session to `casper` to execute a remote command (`uptime`). You can see from the `ncar-two-factor:` prompt we are required to two-factor authenticate with Duo, as usual.
 
          Also, note that we were able to reference the short host name `casper` since our `~/.ssh/config` has this aliased to `casper.hpc.ucar.edu`.
@@ -98,7 +101,7 @@ To see how these pieces work together, consider the following examples:
 The same process applies when adding a new connection to *Derecho* as seen in the following example.
 
 !!! example "Additionally connecting to `derecho` through another `ControlPath`"
-    ```console linenums="1"
+    ```console linenums="1" hl_lines="16"
     ssh-client(6)$ ssh derecho "uname -a"
     Access to and use of this UCAR computer system is limited to authorized use by
     UCAR Policies 1-7 and 3-6 and all applicable federal laws, executive orders,
