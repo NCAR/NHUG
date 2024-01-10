@@ -44,8 +44,8 @@ nav:
 
   - Resources: nhug/resources.md
 
-  - Featured Projects:
-      - nhug/featured.md
+  #- Featured Projects:
+  #    - nhug/featured.md
 
   - Blog: 
       - blog/index.md
