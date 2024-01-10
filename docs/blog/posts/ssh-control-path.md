@@ -23,7 +23,7 @@ Do you tire of responding to Duo pushes every single time you log in to NCAR's H
 ## Local configuration
 Nothing special is required on the HPC systems to enable this functionality, however you will need to perform some local configuration of your `ssh` client.  In the example below I'm using `OpenSSH` on my Macbook laptop, and all that is required is editing the `config` file in my `~/.ssh` directory:
 
-```pre title="~/.ssh/config" linenums="1"
+```pre title="~/.ssh/config" linenums="1"  hl_lines="7-12"
 host casper
      HostName casper.ucar.edu
 
@@ -57,37 +57,89 @@ The final section (`host *`) contains the specific configuration of interest:
 
     See [here](https://www.baeldung.com/linux/ssh-keep-alive) for additional discussion.
 
----
-
 Your `~/.ssh/config` file supports many, many more options.  See [here](https://man.openbsd.org/ssh_config) for additional details.
 
 ## Demonstration
 
-<!--
-### Utility shell functions
-```pre
-#########################################
-# ssh
-#########################################
-casper_ssh_control_agent()
-{
-    rm -f /tmp/ssh-controlpath-*casper*
-    echo "Starting an ssh control path connection for casper"
-    ssh -YMNf benkirk@casper.ucar.edu
-}
-derecho_ssh_control_agent()
-{
-    rm -f /tmp/ssh-controlpath-*derecho*
-    echo "Starting an ssh control path connection for derecho"
-    ssh -YMNf benkirk@derecho.hpc.ucar.edu
-}
-ncar_ssh_control_agents()
-{
-    casper_ssh_control_agent
-    derecho_ssh_control_agent
-}
-```
--->
+To see how these pieces work together, consider the following examples:
 
-<!--  LocalWords:  derecho
- -->
+!!! example "Connecting to `casper` through a new `ControlPath` & examining the mechanics of the process"
+    ```console linenums="1"
+    ssh-client(1)$ ls ~/.ssh/control*
+    ls: /Users/benkirk/.ssh/control*: No such file or directory
+
+    ssh-client(2)$ ssh casper uptime
+    (benkirk@casper.hpc.ucar.edu) ncar-two-factor:
+     07:53:13  up 22 days 12:30,  89 users,  load average: 7.74, 7.87, 8.09
+
+    ssh-client(3)$ file ~/.ssh/control*
+    /Users/benkirk/.ssh/controlpath-benkirk@casper.hpc.ucar.edu:22: socket
+
+    ssh-client(4)$ ps aux | grep "ssh: " | grep -v grep | awk '{print $11 " " $12 " " $13}'
+    ssh: /Users/benkirk/.ssh/controlpath-benkirk@casper.hpc.ucar.edu:22 [mux]
+
+    ssh-client(5)$ ssh casper uptime
+     07:53:34  up 22 days 12:31,  87 users,  load average: 7.66, 7.85, 8.08
+    ```
+
+    ---
+
+    **Detailed Discussion**
+
+      1. For demonstration purposes, we begin on a quiet client with no existing `ControlPath` instances (line 1).
+      2. On line 4 we start a new `ssh` session to `casper` to execute a remote command (`uptime`). You can see from the `ncar-two-factor:` prompt we are required to two-factor authenticate with Duo, as usual.
+
+         Also, note that we were able to reference the short host name `casper` since our `~/.ssh/config` has this aliased to `casper.hpc.ucar.edu`.
+      3. Lines 8-9 show that `ssh` has now automatically created the `~/.ssh/controlpath-benkirk@casper.hpc.ucar.edu:22` socket for us, as specified by the `ControlPath` configuration.
+      4. Lines 11-12 demonstrate the impact of the `ControlPersist` option.  Even though we are not currently using `ssh` (our connection in step 2 has terminated), we still have an `ssh` process active in the background referencing our `ControlPath` file.  This process keeps the connection active and ready to be reused by other processes, up to the `ControlPersist` timeout.
+      5. In line 14 we repeat the `ssh casper uptime` command, and no 2FA is required!
+
+
+The same process applies when adding a new connection to *Derecho* as seen in the following example.
+
+!!! example "Additionally connecting to `derecho` through another `ControlPath`"
+    ```console linenums="1"
+    ssh-client(6)$ ssh derecho "uname -a"
+    Access to and use of this UCAR computer system is limited to authorized use by
+    UCAR Policies 1-7 and 3-6 and all applicable federal laws, executive orders,
+    policies and directives. UCAR computer systems are subject to monitoring at all
+    times to ensure proper functioning of equipment and systems including security
+    devices, to prevent unauthorized use and violations of statutes and security
+    regulations, to deter criminal activity, and for other similar purposes.
+
+    Users should be aware that information placed in the system is subject to
+    monitoring and is not subject to any expectation of privacy. Unauthorized use
+    or abuse will be dealt with according to UCAR Policy, up to and including
+    criminal or civil penalties as warranted.
+
+    By logging in, you are agreeing to these terms.
+
+    (benkirk@derecho.hpc.ucar.edu) ncar-two-factor:
+    Linux derecho4 5.14.21-150400.24.18-default #1 SMP PREEMPT_DYNAMIC Thu Aug 4 14:17:48 UTC 2022 (e9f7bfc) x86_64 x86_64 x86_64 GNU/Linux
+
+    ssh-client(7)$ file ~/.ssh/control*
+    /Users/benkirk/.ssh/controlpath-benkirk@casper.hpc.ucar.edu:22:  socket
+    /Users/benkirk/.ssh/controlpath-benkirk@derecho.hpc.ucar.edu:22: socket
+
+    ssh-client(8)$ ps aux | grep "ssh: " | grep -v grep | awk '{print $11 " " $12 " " $13}'
+    ssh: /Users/benkirk/.ssh/controlpath-benkirk@derecho.hpc.ucar.edu:22 [mux]
+    ssh: /Users/benkirk/.ssh/controlpath-benkirk@casper.hpc.ucar.edu:22 [mux]
+
+    ssh-client(9)$ ssh derecho "uname -a"
+    Linux derecho4 5.14.21-150400.24.18-default #1 SMP PREEMPT_DYNAMIC Thu Aug 4 14:17:48 UTC 2022 (e9f7bfc) x86_64 x86_64 x86_64 GNU/Linux
+    ```
+
+    ---
+
+    **Detailed Discussion**
+
+      1. In lines 1-16 we similarly start a new `ssh` session to `derecho` to execute a remote command (`uname -a`), using the short host name alias.
+      2. Lines 19-25 demonstrate that we now have a `ControlPath` and persistent connection to *Derecho* as well.
+      3. Lines 27-28 show that subsequent `ssh` connections do not require 2FA. Success!!
+
+
+In the examples above we have used `ssh` to run a remote command, but the same functionality applies with terminal sessions, and extends to `scp` and `sftp` as well.
+
+**Happy `ssh`'ing!!**
+
+<!--  LocalWords:  derecho ControlMaster ControlPath ControlPersist ServerAliveInterval ServerAliveCountMax casper linenums uptime ncar -->
