@@ -1,7 +1,7 @@
 ---
 title: Welcome to the NHUG Blog!
 description: Announcing the launch of the NHUG Blog
-draft: true
+draft: false
 date: 2024-01-08
 categories:
   - Announcements
