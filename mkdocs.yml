@@ -1,4 +1,4 @@
-INHERIT: ./mkdocs.base.yml
+INHERIT: mkdocs.base.yml
 
 # ------------------------------------
 # ----------- content ----------------
