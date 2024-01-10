@@ -1,7 +1,7 @@
 ---
 title: Welcome to the NHUG Blog!
 description: Announcing the launch of the NHUG Blog
-draft: true
+draft: false
 date: 2024-01-08
 categories:
   - Announcements
@@ -89,6 +89,18 @@ authors:
 
 For first-time contributors, add your details to `.authors.yml` under `/docs/blog/` using a unique identifier (like your GitHub username).
 Once you have added your name to the `.authors.yml` file, you can add your identifier in the `authors` field in the front matter section of your post.
+
+
+#### Blog Post Preview
+
+To preview your blog post locally, first install the following dependencies:
+```bash
+pip install -r requirements.txt
+```
+Then,run the following command from the root of the NHUG repository to preview your blog post:
+```bash
+mkdocs serve
+```
 
 
 ---
