@@ -91,6 +91,18 @@ For first-time contributors, add your details to `.authors.yml` under `/docs/blo
 Once you have added your name to the `.authors.yml` file, you can add your identifier in the `authors` field in the front matter section of your post.
 
 
+#### Blog Post Preview
+
+To preview your blog post locally, first install the following dependencies:
+```bash
+pip install -r requirements.txt
+```
+Then,run the following command from the root of the NHUG repository to preview your blog post:
+```bash
+mkdocs serve
+```
+
+
 ---
 
 Stay tuned for more posts, and once again, welcome to the NHUG Blog!
