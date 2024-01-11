@@ -28,7 +28,8 @@ nav:
     - nhug/index.md
 
   - Monthly Meetings:
-    - NHUG Upcoming Meetings:  nhug/upcoming-events.md
+    - nhug/monthly-meetings/index.md
+    - Upcoming Meetings:  nhug/upcoming-events.md
     - Archive of Past Meetings:
       #- nhug/archive/index.md
       - nhug/archive/2023-12-05.md
