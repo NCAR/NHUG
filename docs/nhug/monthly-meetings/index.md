@@ -1,6 +1,8 @@
 # NHUG Monthly Meetings
 
-NHUG holds monthly meetings featuring different HPC-related topics. Our aim is to build a vibrant community around HPC-related issues and to bolster collaboration within the NCAR HPC user community. These meetings provide provides a venue for discussion, coordination and showcasing NCAR HPC-related work in progress. 
+NHUG holds monthly meetings featuring different HPC-related topics, __on the third Tuesday of the month, from 1 p.m. to 2 p.m. Mountain Time__. Our goal is to build a vibrant community around HPC-related issues and to increase collaboration within the NCAR HPC user community. These meetings provide a venue for discussion, coordination, and showcasing NCAR HPC-related work in progress. 
+
+All NCAR HPC users, regardless of experience or sophistication, are welcome and encouraged to attend. 
 
 What to Expect at NHUG Meetings:
 
