@@ -28,9 +28,11 @@ nav:
     - nhug/index.md
 
   - Monthly Meetings:
-    - NHUG Upcoming Meetings:  nhug/upcoming-events.md
-    - Archive of Past Meetings:
-      - nhug/archive/index.md
+    - nhug/monthly-meetings/index.md
+    - NHUG Upcoming Meetings: nhug/monthly-meetings/upcoming-events.md      
+    - Meeting Archives:
+      #- nhug/archive/index.md
+      - nhug/archive/2024-01-16.md
       - nhug/archive/2023-12-05.md
       - nhug/archive/2023-11-07.md
       - nhug/archive/2023-10-04.md
@@ -41,6 +43,8 @@ nav:
       - nhug/archive/2023-04-04.md
       - nhug/archive/2023-03-07.md
       - nhug/archive/2023-02-07.md
+      - nhug/archive/2022-12-06.md
+      - nhug/archive/2022-11-01.md
 
   - Resources: nhug/resources.md
 
@@ -49,6 +53,8 @@ nav:
 
   - Blog: 
       - blog/index.md
+
+
 
 # ------------------------------------
 # -- configurations
@@ -83,10 +89,8 @@ theme:
     - navigation.path         # adding path to the top
     # - navigation.instant
     # - navigation.prune
-    # - navigation.sections
     - navigation.tabs
-    # - navigation.tabs.sticky
-    # - navigation.top
+    - navigation.tabs.sticky
     - navigation.tracking # -- When anchor tracking is enabled, the URL in the address bar is automatically updated with the active anchor as highlighted.
     # - navigation.sections # -- When sections are enabled, top-level sections are rendered as groups in the sidebar for viewports above 1220px, but remain as-is on mobile.
     - search.highlight
