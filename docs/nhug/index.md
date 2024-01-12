@@ -18,9 +18,10 @@ NHUG holds monthly meetings featuring different HPC-related topics, __on the thi
         <a href="http://ncarhpcusergroup.slack.com" class="md-button md-button--primary">:fontawesome-brands-slack: &ensp; Join NHUG Slack Channel</a>
     </div>
 
-!!! tip "Contribute to Future NHUG Topics"
+!!! tip "[Contribute to Future NHUG Topics](monthly-meetings/#get-involved)"
     If you have suggestions for future meeting topics or ideas that can enhance our community, we'd love to hear from you. Please submit your ideas using the form below to help shape our upcoming sessions.
-        [Submit Your Ideas](https://forms.gle/Z4R6U4kV9BFt4xws7){ .md-button .md-button--primary }
+
+    [Submit Your Ideas](https://forms.gle/Z4R6U4kV9BFt4xws7){ .md-button .md-button--primary }
 
 
 
