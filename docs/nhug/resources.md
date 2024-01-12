@@ -10,6 +10,13 @@ Join NHUG email list to receive calendar invites for upcoming monthly meetings a
 
 [Join NHUG Email List](https://groups.google.com/a/ucar.edu/g/nhug){ .md-button .md-button--primary}
 
+
+## NCAR HPC Documentation
+The NCAR HPC Documentation site provides information about the NCAR HPC systems, including Derecho, Casper, and GLADE. It also provides information about the software and tools available on these systems, as well as information about how to use them.
+
+[NCAR HPC Docs](https://ncar-hpc-docs.readthedocs.io/en/latest/){ .md-button .md-button--primary}
+
+
 ## Consulting Services Office Hours
 Looking for one-on-one help? Our Consulting Services are here for you. Book a session during our Office Hours for personalized support with any HPC-related challenges. Just click below to find a time that works for you.
 
@@ -18,3 +25,4 @@ Looking for one-on-one help? Our Consulting Services are here for you. Book a se
 ## NHUG Events Calendar
 
 <iframe src="https://calendar.google.com/calendar/embed?src=c_dc0c0de9ff15969d9cf4848892124492746d34361413afa73d544c0038beb2e6%40group.calendar.google.com&ctz=America%2FDenver" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
