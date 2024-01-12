@@ -24,12 +24,12 @@ validation:
 # ----------- content ----------------
 # ------------------------------------
 nav:
-  - Home: 
+  - Home:
     - nhug/index.md
 
   - Monthly Meetings:
     - nhug/monthly-meetings/index.md
-    - NHUG Upcoming Meetings: nhug/monthly-meetings/upcoming-events.md      
+    - NHUG Upcoming Meetings: nhug/monthly-meetings/upcoming-events.md
     - Meeting Archives:
       #- nhug/archive/index.md
       - nhug/archive/2024-01-16.md
@@ -51,7 +51,7 @@ nav:
   - Featured Projects:
       - nhug/featured.md
 
-  - Blog: 
+  - Blog:
       - blog/index.md
 
 
@@ -100,28 +100,29 @@ theme:
     #- toc.integrate   # one toc on left only
     - announce.dismiss
 
-  #logo: assets/images/ncar_cisl.png
-  #logo : https://arc.ucar.edu/assets/NCAR_CISL_logo_no_text-719d5fa40f0d6ed10edd1ce499a1cae632b17fc4126d9a6be748cf740bcf5d1c.png
-  logo : assets/images/CISL-contemp-logo-blue-square.png
-  #logo: https://raw.githubusercontent.com/negin513/hpc-docs-demo/main/assets/images/CISL-contemp-logo-blue-square.png
+  logo : assets/images/CISL-contemp-logo-white-square.png
   favicon : https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://arc.ucar.edu/knowledge_base/83853599
 
   palette:
-    - scheme: cisl_default
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
       toggle:
-        icon: material/toggle-switch-off-outline
-        name: Switch to dark mode
-    - scheme: cisl_default_dark
-      toggle:
-        icon: material/toggle-switch
+        icon: material/brightness-auto
         name: Switch to light mode
 
-  font:
-        text: Poppins
-        code: Roboto Mono
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
 
-  highlightjs: true
-
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
 
 extra_css:
   - stylesheets/extra.css
@@ -151,6 +152,21 @@ markdown_extensions:
   - toc:
       permalink: true
       title: "Page Outline"
+
+  # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+     url_download: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
   - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
@@ -166,18 +182,12 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-  - pymdownx.snippets:
-     url_download: true
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
   - pymdownx.details
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-  - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.magiclink:
       repo_url_shorthand: true
@@ -185,11 +195,6 @@ markdown_extensions:
       repo: mkdocs-material
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
