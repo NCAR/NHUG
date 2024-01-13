@@ -220,9 +220,15 @@ iframe {
 
 /* Maximum space for text block (https://github.com/squidfunk/mkdocs-material/discussions/3692) */
 .md-grid {
-    max-width: 100%;
+    max-width: 90%;
+/*    max-width: 1440px; */
 }
 
+
+.md-typeset .admonition.narrow {
+  max-width: 500px;
+  margin-inline: auto;
+}
 
 /* Highlight Color*/
 .md-typeset mark {

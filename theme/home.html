@@ -1,0 +1,187 @@
+{% extends "main.html" %} 
+
+<!-- Render hero under tabs -->
+{% block tabs %}
+  {{ super() }}
+
+  <!-- Additional styles for landing page -->
+  <style>
+
+    /* Application header should be static for the landing page */
+    .md-header {
+      position: initial;
+    }
+
+    /* Remove spacing, as we cannot hide it completely */
+    .md-main__inner {
+      margin: 0;
+    }
+
+    /* Gradient background + blob */
+    .tx-container {
+      padding-top: 1rem;
+      background:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M 1124,2 V 258 H -1 v -48 c 0,0 16,5 55,5 C 606.44786,217.24038 665.94266,3 1205,3 Z' style='fill: white' /></svg>") no-repeat bottom,
+        linear-gradient(
+          to bottom,
+          var(--md-primary-fg-color),
+          var(--osc-accent-color),
+          rgb(117, 64, 64) 99%
+        );
+    }
+
+    /* Set inverted text color on hero */
+    .tx-hero {
+      margin: 0 .8rem;
+    /*  color: var(--md-primary-bg-color); */
+    }
+
+    /* Make main headline thicker */
+    .tx-hero h1 {
+      margin-bottom: 1rem;
+      color: currentColor;
+      font-weight: 700;
+      max-width: 1200px;
+    }
+
+    /* Ensure that blob doesn't overlap buttons */
+    .tx-hero__content {
+      padding-bottom: 6rem;
+      max-width: 1000px; /* or any other value */
+    /* other existing styles */
+    }
+
+    /* Increase bottom spacing and set dimensions */
+    .tx-hero__content {
+        max-width: 1000px;
+        margin-top: 3.5rem;
+        padding-bottom: 14vw;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+    .tx-admonition .admonition {
+        font-size: 1.2rem;
+        background-color: var(--md-default-bg-color);
+    }
+
+
+
+    /* [mobile portrait -]: Adjust headline */
+    @media screen and (max-width: 30em) {
+
+      /* Make main headline smaller */
+      .tx-hero h1 {
+        font-size: 1.4rem;
+      }
+    }
+
+    /* [tablet landscape +]: Display content and image next to each other */
+    @media screen and (min-width: 60em) {
+
+      /* Hide table of contents */
+      .md-sidebar--secondary {
+        display: none;
+      }
+
+      /* Use flex layout to align items */
+      .tx-hero {
+        display: flex;
+        align-items: stretch;
+        justify-items: space-between;
+      }
+
+      /* Increase bottom spacing and set dimensions */
+      .tx-hero__content {
+        max-width: 1440px;
+        margin-top: 3.5rem;
+        padding-bottom: 14vw;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Swap with teaser and set dimensions */
+      .tx-hero__image {
+        width: 38rem;
+        order: 1;
+        transform: translateX(4rem);
+      }
+    }
+
+    /* [screen +]: Adjust spacing */
+    @media screen and (min-width: 76.25em) {
+
+      /* Hide navigation */
+      .md-sidebar--primary {
+        display: none;
+      }
+
+      /* Ensure the image aligns with the repository information */
+      .tx-hero__image {
+        transform: translateX(8rem);
+      }
+    }
+  </style>
+
+  <!-- Hero for landing page -->
+  <!-- Hero for landing page -->
+  <section class="tx-container">
+    <div class="md-grid md-typeset">
+      <div class="tx-hero">
+        <!-- Hero content -->
+        <div class="tx-hero__content">
+          <h1>Welcome to the NCAR HPC User Group (NHUG)!</h1>
+          <div class="admonition info">
+            <p class="admonition-title">NHUG welcomes participation from all NCAR HPC users!</p>
+          </div>
+          <p>NHUG is a dedicated community that aims to promote the productive use of high-performance computing (HPC) facilities at NCAR and increase collaboration among all of the NCAR HPC community.</p>
+          <p>NHUG holds monthly meetings featuring different HPC-related topics, <strong>on the third Tuesday of the month, from 1 p.m. to 2 p.m. Mountain Time</strong>. The goal of these meetings is to foster a community around HPC-related issues and increase collaboration among all of the NCAR HPC user community. To learn more about NHUG monthly meetings, please visit the <a href="monthly-meetings/">NHUG Monthly Meetings</a> page.</p>
+
+          <a href="{{ page.next_page.url | url }}" class="md-button md-button--primary">
+            Monthly Meetings
+          </a>
+
+          <div class="admonition note">
+            <p class="admonition-title">NHUG Communication Channels</p>
+            <p>Join the NHUG email list to receive calendar invites for upcoming monthly meetings and other important announcements. We also encourage you to join the NCAR HPC User Group Slack channel, which we will use for focused interactions during and outside the monthly meetings. </p>
+            <p>
+              <a href="https://groups.google.com/a/ucar.edu/g/nhug" class="md-button md-button--primary">
+                <span class="twemoji">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512">
+                    <!-- SVG content -->
+                  </svg>
+                </span>
+                &ensp;Join NHUG Email List 
+              </a>
+              <a href="http://ncarhpcusergroup.slack.com" class="md-button md-button--primary">
+                <span class="twemoji">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512">
+                    <!-- SVG content -->
+                  </svg>
+                </span>
+                &ensp;Join NHUG Slack Channel
+              </a>
+            </p>
+          </div>
+
+          <div class="admonition tip">
+            <p class="admonition-title">
+              <a href="monthly-meetings/#get-involved">Contribute to Future NHUG Topics</a>
+            </p>
+            <p>If you have suggestions for future meeting topics or ideas that can enhance our community, we'd love to hear from you. Please submit your ideas using the form below to help shape our upcoming sessions.</p>
+            <p>
+              <a class="md-button md-button--primary" href="https://forms.gle/Z4R6U4kV9BFt4xws7">Submit Your Ideas</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+
+<!-- Content -->
+{% block content %}{% endblock %}
+
+<!-- Application footer -->
+{% block footer %}{% endblock %}
