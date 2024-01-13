@@ -29,8 +29,7 @@ hide:
 
     .md-typeset .admonition,
     .md-typeset details {
-    border-width: 0;
-    border-left-width: 4px;
+    border-width: 3px;
     font-size: 17px;
     }
 
