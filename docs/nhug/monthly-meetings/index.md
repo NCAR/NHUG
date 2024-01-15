@@ -32,7 +32,7 @@ NHUG meetings are a great place to discuss your progress on NCAR HPC systems, ge
 
           Share your HPC-related projects or experiences with NCAR HPC systems. 
 
-         [:octicons-arrow-right-24: Sign up to present at future NHUG meetings.](#)
+         [:octicons-arrow-right-24: Sign up to present at future NHUG meetings.](https://docs.google.com/spreadsheets/d/1Wnz6lsWtemiUX0ZN2jP5uIYqAHbhhRr7UlC1J39sBCI/edit#gid=0)
  
 
       -   __Topic Suggestion__
@@ -41,7 +41,7 @@ NHUG meetings are a great place to discuss your progress on NCAR HPC systems, ge
 
           Have a topic you're eager to learn more about or a speaker you’d like us to invite? 
 
-          [:octicons-arrow-right-24: Submit your ideas through our suggestion form.](#)
+          [:octicons-arrow-right-24: Submit your ideas through our suggestion form.](https://forms.gle/Z4R6U4kV9BFt4xws7)
 
     </div>
 
