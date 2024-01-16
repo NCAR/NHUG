@@ -44,7 +44,7 @@ hide:
 NHUG is a dedicated community that aims to promote the productive use of high-performance computing (HPC) facilities at NCAR and increase collaboration among all of the NCAR HPC community.
 
 
-NHUG holds monthly meetings featuring different HPC-related topics, __on the third Tuesday of the month, from 1 p.m. to 2 p.m. Mountain Time__. The goal of these meetings is to foster a community around HPC-related issues and increase collaboration among all of the NCAR HPC user community. To learn more about NHUG monthly meetings, please visit the [NHUG Monthly Meetings](monthly-meetings/) page.
+NHUG holds monthly meetings featuring different HPC-related topics, __on the third Tuesday of the month, from 1 p.m. to 2 p.m. Mountain Time__. The goal of these meetings is to foster a community around HPC-related issues and increase collaboration among all of the NCAR HPC user community. To learn more about NHUG monthly meetings, please visit the [NHUG Monthly Meetings](nhug/monthly-meetings/) page.
 
 <a href="monthly-meetings/" class="md-button md-button--primary"> :material-calendar-check: &ensp; Monthly Meetings </a>
 
