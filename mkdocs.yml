@@ -229,6 +229,9 @@ plugins:
 
 
 extra:
+  analytics:
+    provider: google
+    property: G-9XZGR836H2
   social:
     - icon: material/home-circle
       link: https://arc.ucar.edu/
