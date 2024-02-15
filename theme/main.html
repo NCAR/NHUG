@@ -1,8 +1,16 @@
 {% extends "base.html" %}
 
-{% block htmltitle %}
-  <title>NHUG</title>
-{% endblock %}
+<!-- include page short_title *after* site name, if it exists, and fall back to page title -->
+{%- block htmltitle %}
+<title>
+  {{ config.site_name }}
+   {%- if page and page.meta and page.meta.short_title and not page.is_homepage %}
+  - {{ page.meta.short_title }}
+  {%- elif page and page.title and not page.is_homepage %}
+  - {{ page.title }}
+  {%- endif %}
+</title>
+{%- endblock %}
 
 
 <!-- Announcement bar -->
