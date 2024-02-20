@@ -227,6 +227,13 @@ plugins:
       draft: true
       blog_toc: true
       post_url_format: "{slug}"
+  - rss:
+      match_path: blog/posts/.*
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
+        - tags
 
 
 extra:

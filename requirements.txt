@@ -16,6 +16,7 @@ mkdocs-minify-plugin
 mkdocs-git-revision-date-plugin
 mkdocs-git-revision-date-localized-plugin
 mkdocs-glightbox
+mkdocs-rss-plugin
 
 # Requirements for plugins
 babel~=2.10
