@@ -228,26 +228,14 @@ plugins:
       blog_toc: true
       post_url_format: "{slug}"
   - rss:
-      match_path: blog/posts/.*
-      date_from_meta:
-        as_creation: date
-      categories:
-        - tags
-      enabled: true
-      feed_ttl: 1440
       image: https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Feed-icon.svg/128px-Feed-icon.svg.png
-      json_feed_enabled: true
-      length: 20
-      match_path: ".*"
-      pretty_print: false
-      rss_feed_enabled: true
-      url_parameters:
-        utm_source: "documentation"
-        utm_medium: "RSS"
-        utm_campaign: "feed-syndication"
-      use_git: true
-      use_material_social_cards: true
-
+      match_path: "blog/posts/.*"
+      date_from_meta:
+        as_creation: "date"
+        as_update: false
+        datetime_format: "%Y-%m-%d"
+        pretty_print : true
+        rss_feed_enabled: true
 
 
 extra:
@@ -263,3 +251,5 @@ extra:
       link: https://github.com/NCAR
     - icon: fontawesome/brands/slack
       link: https://join.slack.com/t/ncarhpcusergroup/shared_invite/zt-1z00napom-SU0X8CzJWVY90C2GzRvUCg
+    - icon: fontawesome/solid/rss
+      link: https://nhug.readthedocs.io/en/latest/feed_rss_created.xml
