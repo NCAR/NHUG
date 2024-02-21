@@ -1,4 +1,5 @@
 # Blog
+<div style="text-align: right"><a href="./feed_rss_created.xml">RSS Feed</a></div>
 
 NHUG Blog is a location for the NHUG community to share their experiences and knowledge with the rest of the community.
 
