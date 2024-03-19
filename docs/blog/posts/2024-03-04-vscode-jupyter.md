@@ -5,7 +5,7 @@ authors:
 draft: false
 date: 2024-03-04
 categories:
-  - Examples
+  - Example
   - Tips
   - Post
 ---
