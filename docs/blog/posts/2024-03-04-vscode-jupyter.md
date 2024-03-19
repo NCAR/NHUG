@@ -18,7 +18,7 @@ VSCode is an extensible code editing software that can connect to remote systems
 
 For NCAR, you can use VSCode as a less feature rich alternative to Jupyterhub.  It doesn't have all of the functionality of Jupyterhub but can run the same notebooks with kernels that are available on Derecho, Casper, or your own custom environments.
 
-VSCode is available for NCAR issued laptops in the *Self Service* application.
+VSCode is available for NCAR issued laptops in the *Self Service* application.  You can find more information about VSCode and download it here: [VSCode](https://code.visualstudio.com/)
 
 # Extensions
 
@@ -48,9 +48,13 @@ If you prefer to use a GUI File Explorer then you can connect to the GLADE files
 
 ![Remote Folder](2024-03-04-vscode-jupyter/media/openfolder.png)
 
- * **Warning:** Only open small folders to improve performance and reduce memory load on Derecho login nodes.  VSCode will scan the entire contents of the directory at high frequency causing slow autocomplete for Intellisense and flag you for login resource abuse.
+!!! warning 
+    Only open small folders to improve performance and reduce memory load on Derecho login nodes.  VSCode will scan the entire contents of the directory at high frequency causing slow autocomplete for Intellisense and flag you for login resource abuse.
 
-* **Tip**: You can connect to recently used remote paths by creating a new window and selecting it from the *Recent* list.
+
+!!! tip 
+    You can connect to recently used remote paths by creating a new window and selecting it from the *Recent* list.
+
 
 ## Terminal vs. File Explorer
 
@@ -58,7 +62,9 @@ Once you have connected to your GLADE path then you can work out of the VSCode F
 
 ![Terminal](2024-03-04-vscode-jupyter/media/condaterminal.png)
 
-* **Info:** You can use the File Explorer to transfer files between your local machine and Derecho or Casper.  Right click on the file and select *Download*.
+!!! info
+    You can use the File Explorer to transfer files between your local machine and Derecho or Casper.  Right click on the file and select *Download*.
+
 
 # Conda, Kernels, and Notebooks
 
