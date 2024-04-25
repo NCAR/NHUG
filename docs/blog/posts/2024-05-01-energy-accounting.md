@@ -2,7 +2,7 @@
 title: Energy Accounting on Derecho
 description: Derecho's PBS can now show you how much energy your job used.
 draft: false
-date: 2024-05-01
+date: 2024-04-26
 categories:
   - Energy
   - Derecho
@@ -30,7 +30,7 @@ matthews@derecho1:~> qstat -f -x 4238938 | grep 'x-ncar.*-energy'
     resources_used.x-ncar-memory-energy = 1131
 ```
 
-Each of these fields is in Joules (Watt*Seconds) and covers a period of time from immediately before the job script starts to immediately after it ends. Total energy is provided as "x-ncar-energy" and the energy that the system attributed to the CPU, RAM, and individual GPUs are called out separately. Note that these major components do not constitute all of the energy consumed by the node so the total energy will generally be higher than the sum of the components. There also may be a small error introduced due to the delay between when each of these measurements is sampled.
+Each of these fields is in Joules (Watt*Seconds) and covers a period of time from immediately before the job script starts to immediately after it ends. Total energy is provided as "x-ncar-energy" and the energy that the system attributed to the CPU, RAM, and individual GPUs are called out separately. Note that these major components do not constitute all of the energy consumed by the node so the total energy will generally be higher than the sum of the components. There also may be a small error introduced due to the delay between when each of these measurements is sampled. If a job spans multiple nodes, each field represents the total energy consumed by that device type across all nodes. For example, a three-node GPU job would report the sum of all GPU-ID 0 devices in the "x-ncar-gpu0-energy" field.
 
 If the job ran on a node which didn't have GPUs (as above), the GPU energy will be listed as 0 Joules. If the job ran on a shared node (the develop queue), it's not possible to completely isolate the energy consumption of your job from other jobs running on that node. So it's recommended to rerun your job on an exclusive use node before trusting this data.
 
