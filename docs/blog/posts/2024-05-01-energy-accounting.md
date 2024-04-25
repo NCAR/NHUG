@@ -1,7 +1,7 @@
 ---
 title: Energy Accounting on Derecho
 description: Derecho's PBS can now show you how much energy your job used.
-draft: true
+draft: false
 date: 2024-05-01
 categories:
   - Energy
