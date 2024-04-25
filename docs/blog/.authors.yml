@@ -26,3 +26,10 @@ authors:
     slug: matthews
     avatar: https://github.com/matthewsucar.png
     url: https://github.com/matthewsucar
+  
+  vanderwb:
+    name: Brian Vanderwende
+    description: HPC Consultant
+    slug: vanderwb
+    avatar: https://github.com/vanderwb.png
+    url: https://github.com/vanderwb
