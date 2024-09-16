@@ -234,7 +234,7 @@ plugins:
       match_path: "blog/posts/.*"
       date_from_meta:
         as_creation: "date"
-        as_update: false
+        as_update: "false"
         datetime_format: "%Y-%m-%d"
         pretty_print : true
         rss_feed_enabled: true
