@@ -17,22 +17,30 @@ NCAR CISL Consulting Services Group has added the *qvscode* script that starts a
 
 <!-- more -->
 
-You must have a running VSCode Casper login session to launch the *qvscode* script.  First, [connect to a login node](https://ncar-hpc-docs.readthedocs.io/en/latest/environment-and-software/vscode/#connecting-to-derecho-or-casper) and then launch the *qvscode* script from the built-in terminal.  This script will not work if you are connected to your local machine or launch it from outside of VSCode.
+## Procedure
 
-From a login node launch the script:
+1. Open VSCode from your local machine
+2. In VSCode, connect to a Casper login node using RemoteSSH as described [here](https://ncar-hpc-docs.readthedocs.io/en/latest/environment-and-software/vscode/#connecting-to-derecho-or-casper)
+3. Once connected to the login node, open up a new terminal window (Ctrl+Shift+\`) and execute the script: `./glade/home/u/bneuman/scripts/qvscode/qvscode.sh`
+4. Enter a valid project code and follow the prompts to launch a PBS job
+5. A new VSCode window will open and connect to the compute node when your PBS job has started
+
+You *must* have a running VSCode Casper login session to launch the *qvscode* script. [Connect to a login node](https://ncar-hpc-docs.readthedocs.io/en/latest/environment-and-software/vscode/#connecting-to-derecho-or-casper) and then launch the *qvscode* script from VSCode's built-in terminal.  This script will not work if you are connected to your local machine or launch it from outside of VSCode.
+
+Script path and file:
 
 `./glade/home/u/bneuman/scripts/qvscode/qvscode.sh`
 
 !!! warning 
     This is a temporary path and will likely change in the near future.
 
-A new VSCode window will launch on the compute node after user input or reading from the settings file.
+A new VSCode window will launch on the compute node after user input or reading from the settings file.  The above procedure can be simplified by using a settings file as described in the [Settings Mode](#settings-mode) section.
 
 ## Operating Modes
 
-*Prompt Mode* will prompt the user for the values needed to launch the PBS job.  It contains default values to make launching a job faster.
+[Prompt Mode]($prompt-mode) will prompt the user for the values needed to launch the PBS job.  It contains default values to make launching a job faster.
 
-*Settings Mode* reads in variables from a user defined settings file and quickly launches a compute node with these settings.  It requires a specific path and format.
+[Settings Mode]($settings-mode) reads in variables from a user defined settings file and quickly launches a compute node with these settings.  It requires a specific path and format.
 
 ### Prompt Mode
 
@@ -71,7 +79,11 @@ The advanced options have no default values and will only accept CPU and GPU typ
 
 ### Settings Mode
 
-If the `qvscode` script finds a `.qvscode_settings` file in `$HOME` then it will import the variables into the script. The template requires specific keywords to pull values in.  It is *highly* recommended to copy the repository's `qvscode_settings_template` to your `$HOME` directory, rename it to `.qvscode_settings`, and then modify the values for each argument instead of manually creating the settings file.  The format for the template:
+If the `qvscode` script finds a `.qvscode_settings` file in `$HOME` then it will import the variables into the script. The template requires specific keywords to pull values in.  It is *highly* recommended to copy the repository's `qvscode_settings_template` to your `$HOME` directory, rename it to `.qvscode_settings`, and then modify the values for each argument instead of manually creating the settings file.  You can use this command to copy the existing template into your home directory:
+
+`cp /glade/u/home/bneuman/scripts/vscode/qvscode/qvscode_settings_template $HOME/.qvscode_settings`
+
+The format for the template:
 
 ```
 system=casper
