@@ -131,4 +131,4 @@ It is likely that this will become a system alias that can be called directly in
 alias qvscode='/glade/home/u/bneuman/scripts/qvscode/qvscode.sh'
 ```
 
-Please pass along any errors or improvements to [bneuman@ucar.edu](mailto:bneuman@ucar.edu)
+Please pass along any errors or improvements to NHUG Slack channel.
