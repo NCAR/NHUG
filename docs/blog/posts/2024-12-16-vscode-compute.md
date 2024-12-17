@@ -21,7 +21,7 @@ NCAR CISL Consulting Services Group has added the *qvscode* script that starts a
 
 1. Open VSCode from your local machine
 2. In VSCode, connect to a Casper login node using RemoteSSH as described [here](https://ncar-hpc-docs.readthedocs.io/en/latest/environment-and-software/vscode/#connecting-to-derecho-or-casper)
-3. Once connected to the login node, open up a new terminal window (Ctrl+Shift+\`) and execute the script: `./glade/home/u/bneuman/scripts/qvscode/qvscode.sh`
+3. Once connected to the login node, open up a new terminal window (Ctrl+Shift+\`) and execute the script: `./glade/home/u/bneuman/scripts/vscode/qvscode/qvscode.sh`
 4. Enter a valid project code and follow the prompts to launch a PBS job
 5. A new VSCode window will open and connect to the compute node when your PBS job has started
 
@@ -29,7 +29,7 @@ You *must* have a running VSCode Casper login session to launch the *qvscode* sc
 
 Script path and file:
 
-`./glade/home/u/bneuman/scripts/qvscode/qvscode.sh`
+`./glade/home/u/bneuman/scripts/vscode/qvscode/qvscode.sh`
 
 !!! warning 
     This is a temporary path and will likely change in the near future.
