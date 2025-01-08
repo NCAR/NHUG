@@ -31,10 +31,10 @@ VSCode uses significant resources on the login nodes when connecting with the Re
 6. Enter a valid project code and follow the prompts to launch a PBS job
 7. A new VSCode window will open and connect to the compute node when your PBS job has started
 
-A new VSCode window will launch on the compute node after user input or reading from the settings file.  The above procedure can be simplified by using a settings file as described in the [Settings Mode](#settings-mode) section.
+A new VSCode window will launch on the compute node after user input or reading from the settings file.  You will need to enter your NCAR CIT password and provide DUO authentication when connecting to the compute node. The above procedure can be simplified by using a settings file as described in the [Settings Mode](#settings-mode) section.
 
 !!! info
-  Step 6 will not prompt you for a project code if you have PBS_ACCOUNT defined.
+    Step 6 will not prompt you for a project code if you have PBS_ACCOUNT defined.
 
 !!! warning 
     You *must* have a running VSCode Casper login session to launch the *qvscode* script. [Connect to a login node](https://ncar-hpc-  docs.readthedocs.io/en/latest/environment-and-software/vscode/#connecting-to-derecho-or-casper) and then launch the *qvscode* script from VSCode's built-in terminal.  This script will not work if you are connected to your local machine or launch it from outside of VSCode.
