@@ -2,7 +2,7 @@
 
 NHUG holds monthly meetings on the third Tuesday of the month, from 1 p.m. to 2 p.m. Mountain Time.
 
-!!! tip "Next NHUG Meeting : [Tue, January 21, 2025 1pm–2pm MT](../archive/2025-01-21.md)"
+!!! tip "Next NHUG Meeting : [Wed, Feb 19 2025 11am–12pm MT](../archive/2025-02-19.md)"
 
 ## NHUG Events Calendar
 
