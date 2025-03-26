@@ -25,7 +25,7 @@ Nothing special is required on the HPC systems to enable this functionality, how
 
 ```pre title="~/.ssh/config" linenums="1"  hl_lines="7-12"
 host casper
-     HostName casper.ucar.edu
+     HostName casper.hpc.ucar.edu
 
 host derecho
      HostName derecho.hpc.ucar.edu
