@@ -72,7 +72,7 @@ nav:
 
 theme:
   name: material
-  custom_dir: theme/
+  custom_dir: themes
 
   # -- additional features
   icon:
