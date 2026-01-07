@@ -112,7 +112,7 @@ theme:
     #- toc.integrate   # one toc on left only
     - announce.dismiss
 
-  logo : assets/images/CISL-contemp-logo-white-square.png
+  logo : assets/images/NSF-NCAR_Logo_Color-White_RGB.png
   favicon : https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://arc.ucar.edu/knowledge_base/83853599
 
   palette:
@@ -143,7 +143,7 @@ extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
 
 #copyright: '<font color=#666>Content is available under </font><a href="https://creativecommons.org/licenses/by/2.5/" title="Attribution2.5">Attribution2.5</a> <font color=#666>unless otherwise noted.</font>'
-copyright: '&copy; 2023 UCAR, Licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons CC-BY-SA 4.0</a>.'
+copyright: '&copy; 2023-2026 UCAR, Licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons CC-BY-SA 4.0</a>.'
 
 
 markdown_extensions:
@@ -250,6 +250,7 @@ plugins:
 
 
 extra:
+  generator: false
   analytics:
     provider: google
     property: G-9XZGR836H2
